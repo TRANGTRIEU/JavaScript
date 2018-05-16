@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title> Đăng nhập hệ thống</title>
+        <Script type="text/javascript">           
+          function validateForm() 
+          {
+           var name =document.forms["myForm"]['name'].value;
+           if(name=="")
+          {
+             alert('Bạn phải điền thông tin của username');
+             return false;
+          }
+           var pass=document.forms["myForm"]["pass"].value;
+           if(pass=="")
+          {
+             alert('Phải phải điền thông tin password');
+             return false;
+           }
+           var cpass=document.forms["myForm"][cpass].value;
+           if(cpass == "" )
+           {
+            alert('Bạn phải nhập thông tin');
+            return false;
+           }
+           var phone=document.forms["myForm"]["phone"].value;
+           var kiemTraDT = isNaN(phone);
+           if (phone == "") 
+           {
+           alert(' Thông tin điện thoại không được để trống');
+           return false;
+           }
+           if(kiemTraDT==true)
+           {
+            alert(' Điện thoại phải để ở định dạng số')
+            return false;
+           }
+            var email=document.forms["myForm"]["email"].value;
+            var aCong=email.indexOf("a");
+            var dauCham=email.lastIndexOf(".");
+            if (email=="")
+            {
+            alert('Email không được để trống');
+            return false;
+            }
+          }    
+        </Script>
+    </head>
+    <body style= "background-color:#E0FFFF;">                    
+            <form name="myForm" onsubmit="return validateForm()" style="text-align:100px;margin: 120px 120px;width: 330px; height: 500px; border: 2px; background-color:#FFFFE0";>           
+            <h1 style="color:#FF6161; text-align: center"> CREAT ACCOUNT</h1>
+            <div style="text-align: left; padding: 15px">UseName <br>
+               <input type="text" name="name" style="width: 300px;"></div>
+            <div style="padding: 15px"> Password <br>
+                <input type="text" name="pass" style="width: 300px;"/>
+           </div>
+            <div style="padding: 15px"> Confirm Password <br>
+                <input type="text" name="cpass" style="width: 300px;"/>
+            </div>
+            <div style="padding: 15px"> Phone number <br>
+                <input type="number" name="phone" style="width: 300px;"/>
+            </div>
+            <div style="padding:15px;"> Email <br>
+                <input type="text" name="email" style="width: 300px;"/>
+            </div>
+            <div style="font-family: 'Times New Roman', Times, serif; font-size: 20px; color: rgb(59, 243, 59); padding: 20px; text-align: center">
+                <input type="submit" name="Creat" value="Creat account">
+               <!-- <button onclick="alert('Hãy điền vào ô bạn muốn sửa')"> Sửa </button>-->
+                <input name="reset" type="reset" Value="Reset">
+            </div>
+            </form>
+     </body>  
+</html>
